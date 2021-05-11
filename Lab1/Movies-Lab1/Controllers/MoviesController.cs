@@ -20,6 +20,15 @@ namespace Movies_Lab1.Controllers
         {
             _context = context;
         }
+        [HttpGet]
+        [Route("filter/{minReleaseYear}")]
+        public ActionResult<IEnumerable<Movie>> FilterMovies(int minReleaseYear)
+        {
+            var query = _context.Movies.Where(m => m.ReleaseYear >= minReleaseYear);
+            Console.WriteLine(query.ToQueryString());
+            return query.ToList();
+          
+        }
 
         // GET: api/Movies
         [HttpGet]
