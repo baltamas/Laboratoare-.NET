@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Movies_Lab1.Data;
 using Movies_Lab1.Models;
+using Movies_Lab1.ViewModels;
 
 namespace Movies_Lab1.Controllers
 {
@@ -43,16 +44,26 @@ namespace Movies_Lab1.Controllers
 
         // GET: api/Movies/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Movie>> GetMovie(int id)
+        public async Task<ActionResult<MovieViewModel>> GetMovie(int id)
         {
-            var movie = await _context.Movies.FindAsync(id);
+            var movie = await _context.Movies.FindAsync(id); 
+            
+            var movieViewModel = new MovieViewModel
+            {
+                Title = movie.Title,
+                Id = movie.Id,
+                ReleaseYear = movie.ReleaseYear,
+                Rating = movie.Rating,
+                Genre = movie.Genre,
+                StudioName = movie.StudioName
+            };
 
             if (movie == null)
             {
                 return NotFound();
             }
 
-            return movie;
+            return movieViewModel;
         }
 
         // PUT: api/Movies/5
