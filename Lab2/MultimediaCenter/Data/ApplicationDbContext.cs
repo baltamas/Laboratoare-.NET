@@ -11,11 +11,12 @@ using System.Threading.Tasks;
 namespace MultimediaCenter.Data
 {
     public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
-    {
+    {   
         public ApplicationDbContext(
             DbContextOptions options,
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
         }
+        public DbSet<MultimediaCenter.Models.Movie> Movie { get; set; }
     }
 }
