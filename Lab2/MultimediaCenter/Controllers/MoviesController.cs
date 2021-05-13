@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MultimediaCenter.Data;
 using MultimediaCenter.Models;
-
+using MultimediaCenter.ViewModels;
 namespace MultimediaCenter.Controllers
 {
     [Route("api/[controller]")]
@@ -36,16 +36,31 @@ namespace MultimediaCenter.Controllers
 
         // GET: api/Movies/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Movie>> GetMovie(int id)
+        public async Task<ActionResult<MovieViewModel>> GetMovie(int id)
         {
             var movie = await _context.Movie.FindAsync(id);
 
+            var movieViewModel = new MovieViewModel
+            {
+                Id = movie.Id,
+                Title = movie.Title,
+                Description = movie.Description,
+                Genre = movie.Genre,
+                Duration = movie.Duration,
+                ReleaseYear = movie.ReleaseYear,
+                Director = movie.Director,
+                Date = movie.Date,
+                Rating = movie.Rating,
+                Watched = movie.Watched,
+
+
+            };
             if (movie == null)
             {
                 return NotFound();
             }
 
-            return movie;
+            return movieViewModel;
         }
 
         // PUT: api/Movies/5
