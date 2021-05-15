@@ -10,8 +10,8 @@ using MultimediaCenter.Data;
 namespace MultimediaCenter.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210512160054_AddMovie")]
-    partial class AddMovie
+    [Migration("20210515130105_addMovie")]
+    partial class addMovie
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -331,8 +331,8 @@ namespace MultimediaCenter.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Date")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("DateAdded")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -364,7 +364,7 @@ namespace MultimediaCenter.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Movie");
+                    b.ToTable("movies");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultimediaCenter", "MultimediaCenter.csproj", "{CD67D19F-2D40-46DC-A71D-D7645DE1C7EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultimediaCenter", "MultimediaCenter.csproj", "{5FC67392-4EF8-4FFD-9137-AA915129CDF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CD67D19F-2D40-46DC-A71D-D7645DE1C7EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD67D19F-2D40-46DC-A71D-D7645DE1C7EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CD67D19F-2D40-46DC-A71D-D7645DE1C7EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CD67D19F-2D40-46DC-A71D-D7645DE1C7EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FC67392-4EF8-4FFD-9137-AA915129CDF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FC67392-4EF8-4FFD-9137-AA915129CDF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FC67392-4EF8-4FFD-9137-AA915129CDF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FC67392-4EF8-4FFD-9137-AA915129CDF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B692C40B-27C9-471C-A626-6C0DBAAF3E15}
+		SolutionGuid = {29CE6E83-91E0-43F4-9680-2AB4F4BDF951}
 	EndGlobalSection
 EndGlobal
