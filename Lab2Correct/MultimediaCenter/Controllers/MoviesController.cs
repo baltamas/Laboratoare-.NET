@@ -33,10 +33,17 @@ namespace MultimediaCenter.Controllers
         }
 
         [HttpGet]
-        [Route("sortMovieByAddedDate/{fromDate}&{toDate}")]
-        public async Task<ActionResult<IEnumerable<Movie>>> SortByDateAdded(DateTime? fromDate, DateTime? toDate)
+        [Route("filter2")]
+        public async Task<ActionResult<IEnumerable<Movie>>> FilterByAddedDate (DateTime? fromDate, DateTime? toDate)
         {
-            return await _context.Movies.Where(m => m.DateAdded.CompareTo(fromDate) >= 0 && m.DateAdded.CompareTo(toDate) <= 0).OrderByDescending(m => m.ReleaseYear).ToListAsync();
+
+            var filteredMovies = await _context.Movies
+                .Where(m => m.DateAdded >= fromDate && m.DateAdded <= toDate)
+                .OrderByDescending(m => m.ReleaseYear)
+                .Select(m => m)
+                .ToListAsync();
+
+            return Ok(filteredMovies);
         }
 
         // GET: api/Movies
